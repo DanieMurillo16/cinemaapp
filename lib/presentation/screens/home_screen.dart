@@ -1,3 +1,4 @@
+import 'package:cinemaapp/config/constats/enviroment.dart';
 import 'package:flutter/material.dart';
 
 
@@ -11,8 +12,8 @@ class HomeScreen extends StatelessWidget {
       appBar: AppBar(
         title: const Text('Home Screen'),
       ),
-      body: const Center(
-        child: Text('Home Screen'),
+      body: Center(
+        child: Text(Environment.theMovieKey),
       ),
     );
   }
