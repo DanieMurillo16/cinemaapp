@@ -8,7 +8,7 @@ class FullScreenLoarder extends StatelessWidget {
   final message = <String>[
     'Cargando perfiles...',
     'Cargando peliculas...',
-    'Cargando data...',
+    'Cargando personajes...',
     'Ya casi terminamos...',
   ];
 
