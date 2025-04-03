@@ -62,4 +62,14 @@ class MovidedbDatasocurce extends MoviesDataSource {
     final Movie movie = MoviedbMapper.movieDetailsToEntity(movieDB);
     return movie;
   }
+  
+  @override
+  Future<List<Movie>> searchMovies(String query) async{
+     final response = await dio.get('/search/movie', queryParameters: {'query': query});
+    if (response.statusCode != 200) {
+      throw Exception('Error, no se encontro pelicula ');
+    }
+    return _jsonToMovies(response.data);
+  }
+  
 }

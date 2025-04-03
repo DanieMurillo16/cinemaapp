@@ -7,6 +7,7 @@ class MovieRepositoryImplementation  extends MoviesRepository{
 
   final MoviesDataSource dataSource;
   MovieRepositoryImplementation(this.dataSource);
+  
   @override
   Future<List<Movie>> getNowPlaying({int page = 1}) {
     return dataSource.getNowPlaying(page: page);
@@ -29,6 +30,11 @@ class MovieRepositoryImplementation  extends MoviesRepository{
   @override
   Future<Movie> getMovieById(String movieId) {
     return dataSource.getMovieById(movieId);
+  }
+  
+  @override
+  Future<List<Movie>> searchMovies(String query) {
+    return dataSource.searchMovies(query);
   }
 
 }
